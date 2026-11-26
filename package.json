@@ -1,0 +1,22 @@
+{
+  "name": "guildmaster",
+  "version": "0.1.0",
+  "description": "A full-stack fantasy adventurer guild management simulator.",
+  "type": "module",
+  "main": "game/index.js",
+  "scripts": {
+    "start": "node game/index.js",
+    "dev": "node --watch game/index.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "express",
+    "mongodb",
+    "rpg",
+    "simulation"
+  ],
+  "license": "UNLICENSED",
+  "private": true
+}
