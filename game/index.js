@@ -1,18 +1,23 @@
+import { Guild } from "./guild/Guild.js";
+import {
+    generateAdventurers
+} from "./adventurers/adventurerGenerator.js";
+
 console.log("==============================");
 console.log("       GUILDMASTER v0.1       ");
 console.log("==============================");
 
-const guildName = "The Silver Dawn";
-const gold = 500;
-const reputation = 0;
-const guildRank = "F";
-const currentDay = 1;
+const guild = new Guild("The Silver Dawn");
 
-console.log(`Guild: ${guildName}`);
-console.log(`Gold: ${gold}`);
-console.log(`Reputation: ${reputation}`);
-console.log(`Guild Rank: ${guildRank}`);
-console.log(`Day: ${currentDay}`);
+console.log("\n--- Guild Information ---");
+console.table(guild.getSummary());
 
-console.log("==============================");
-console.log("Welcome, Guildmaster!");
+console.log("\n--- Recruitment Tavern ---");
+
+const recruits = generateAdventurers(5);
+
+for (const recruit of recruits) {
+    console.log(
+        `${recruit.getSummary()} | ${recruit.recruitmentCost} gold`
+    );
+}
